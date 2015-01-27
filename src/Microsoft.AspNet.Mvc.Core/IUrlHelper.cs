@@ -34,13 +34,22 @@ namespace Microsoft.AspNet.Mvc
 
         /// <summary>
         /// Returns a value that indicates whether the URL is local. An URL with an absoulte path is considered local
-        /// if it does not have a host/authority part. Urls using the virtual paths ('~/') are also local.
+        /// if it does not have a host/authority part. URLs using the virtual paths ('~/') are also local.
         /// </summary>
         /// <param name="url">The URL.</param>
         /// <returns><c>true</c> if the URL is local; otherwise, <c>false</c>.</returns>
         /// <example>
-        /// For example, <c>/Views/Default/Index.html</c> and <c>~/Index.html</c> are considered local.
-        /// <c>../Index.html</c>, <c>http://www.contoso.com/</c>, and <c>http://localhost/Index.html are non-local URLs.
+        /// <para>
+        /// For example, the following URLs are considered local:
+        /// /Views/Default/Index.html
+        /// ~/Index.html
+        /// </para>
+        /// <para>
+        /// The following URLs are non-local:
+        /// ../Index.html
+        /// http://www.contoso.com/
+        /// http://localhost/Index.html
+        /// </para>
         /// </example>
         bool IsLocalUrl(string url);
 
